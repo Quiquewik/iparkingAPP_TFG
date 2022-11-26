@@ -1,8 +1,11 @@
 package servidor.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import servidor.model.Usuario;
@@ -24,7 +27,13 @@ public class UsuarioService {
 	}
 	
 	public Usuario getUsuarioById(String id) {
-		return repository.findById(id).get();
+		Usuario usuario = new Usuario();
+		try{
+			usuario = repository.findById(id).get();
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+		return  usuario;
 	}
 	
 	public Usuario getUsuarioByDni(String dni) {
