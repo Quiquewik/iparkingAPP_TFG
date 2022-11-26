@@ -26,9 +26,7 @@ public class UsuarioController {
 
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Usuario createUsuario(@RequestBody Usuario usuario) {
-		return service.addUsuario(usuario);
-	}
+	public Usuario addUsuario(@RequestBody Usuario usuario) {return service.addUsuario(usuario);}
 
 	@GetMapping("/usuarios")
 	public List<Usuario> getUsuarios() {
