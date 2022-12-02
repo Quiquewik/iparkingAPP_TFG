@@ -1,11 +1,9 @@
 package servidor.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import servidor.model.Usuario;
@@ -27,13 +25,13 @@ public class UsuarioController {
 		return service.findAllUsuarios();
 	}
 
-	@GetMapping("usuario/{id}")
+	@GetMapping("getById/{id}")
 	@ResponseBody
 	public Usuario getUsuarioById(@PathVariable String id) {
 		return service.getUsuarioById(id);
 	}
 
-	@GetMapping("/usuario/dni/{dni}")
+	@GetMapping("/getByDni/{dni}")
 	@ResponseBody
 	public Usuario getUsuarioByDni(@PathVariable String dni) {
 		return service.getUsuarioByDni(dni);
@@ -44,7 +42,7 @@ public class UsuarioController {
 		return service.updateUsuario(usuarioOld);
 	}
 
-	@DeleteMapping("usuario/{id}")
+	@DeleteMapping("/deleteById/{id}")
 	public String deleteusuario(@PathVariable String id) {
 		return service.deleteUsuario(id);
 	}

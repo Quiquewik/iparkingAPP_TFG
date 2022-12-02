@@ -1,11 +1,11 @@
 package servidor.service;
 
 import java.util.List;
-import java.util.Optional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.data.mongodb.core.aggregation.ArithmeticOperators;
 import org.springframework.stereotype.Service;
 
 import servidor.model.Usuario;
@@ -13,7 +13,9 @@ import servidor.repository.UsuarioRepository;
 
 @Service
 public class UsuarioService {
-	
+
+	Logger log = LoggerFactory.getLogger(UsuarioService.class);
+
 	@Autowired
 	private UsuarioRepository repository;
 	
@@ -31,7 +33,7 @@ public class UsuarioService {
 		try{
 			usuario = repository.findById(id).get();
 		}catch(Exception e){
-			System.out.println(e.getMessage());
+			log.error(e.getMessage());
 		}
 		return  usuario;
 	}
@@ -41,6 +43,7 @@ public class UsuarioService {
 	}
 	
 	public Usuario updateUsuario (Usuario usuarioOld) {
+
 		Usuario usuarioNew = new Usuario();
 		usuarioNew.setApellidos(usuarioOld.getApellidos());
 		usuarioNew.setCorreo(usuarioOld.getCorreo());
@@ -49,10 +52,10 @@ public class UsuarioService {
 		
 		return repository.save(usuarioNew);
 	}
-	
-	public String deleteUsuario (String dni) {
-		repository.deleteByDni(dni);
-		return "Usuario con DNI: "+dni+" eliminado.";
+
+	public String deleteUsuario(String id){
+		repository.deleteById(id);
+		return "Usuario eliminado.";
 	}
-	
+
 }
