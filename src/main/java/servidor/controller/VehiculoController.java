@@ -36,5 +36,7 @@ public class VehiculoController {
     @DeleteMapping("/deleteById/{id}")
     public String deleteVehiculo(@PathVariable String id){ return service.deleteVehiculo(id);}
 
+    @DeleteMapping("/deleteByMatricula/{matricula}")
+    public String deleteVehiculoByMatricula(@PathVariable String matricula){ return service.deleteVehiculoByMatricula(matricula);}
 
 }

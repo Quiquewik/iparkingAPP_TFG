@@ -22,6 +22,7 @@ public class PlazaController {
     @ResponseStatus(HttpStatus.CREATED)
     public Plaza addPlaza(@RequestBody Plaza plaza ){return service.addPlaza(plaza);}
 
+
     @GetMapping("/plazas")
     public List<Plaza> getPlazas(){return service.getAllPlazas();}
 
@@ -37,5 +38,6 @@ public class PlazaController {
 
     @DeleteMapping("/deleteById/{id}")
     public String deletePlaza(@PathVariable String id){return service.deletePlaza(id);}
+
 
 }

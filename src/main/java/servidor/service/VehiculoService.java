@@ -52,4 +52,10 @@ public class VehiculoService {
         repository.deleteById(id);
         return "Vehiculo eliminado";
     }
+
+    public String deleteVehiculoByMatricula(String matricula){
+        repository.deleteByMatricula(matricula);
+        return "Vehiculo eliminado";
+    }
+
 }

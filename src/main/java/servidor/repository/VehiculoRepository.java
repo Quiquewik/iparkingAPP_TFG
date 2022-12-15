@@ -7,5 +7,5 @@ public interface VehiculoRepository extends MongoRepository<Vehiculo, String> {
 
     Vehiculo findByMatricula(String matricula);
 
-
+    void deleteByMatricula(String matricula);
 }
