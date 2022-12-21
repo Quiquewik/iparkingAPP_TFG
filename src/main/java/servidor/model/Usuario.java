@@ -18,7 +18,6 @@ public class Usuario {
 	
 	@Id
 	private String id;
-	@Indexed(unique = true)
 	private String nombreUsuario;
 	private String password;
 	@Indexed(unique = true)
