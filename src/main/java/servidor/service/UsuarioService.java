@@ -45,6 +45,7 @@ public class UsuarioService {
 	public Usuario updateUsuario (Usuario usuarioOld) {
 
 		Usuario usuarioNew = new Usuario();
+		usuarioNew.setNombreUsuario(usuarioOld.getNombreUsuario());
 		usuarioNew.setApellidos(usuarioOld.getApellidos());
 		usuarioNew.setCorreo(usuarioOld.getCorreo());
 		usuarioNew.setDireccion(usuarioOld.getDireccion());

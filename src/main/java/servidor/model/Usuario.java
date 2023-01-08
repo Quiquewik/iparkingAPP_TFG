@@ -25,8 +25,8 @@ public class Usuario {
 	private String nombre;
 	private String apellidos;
 	private String direccion;
-	@Indexed(unique = true)
 	private String correo;
 	private int	tipoUsuario;
+	private Vehiculo[] listaVehiculos;
 
 }
