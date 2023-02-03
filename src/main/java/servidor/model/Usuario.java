@@ -9,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 @Document(collection = "usuarios")
 @Data
 @AllArgsConstructor
@@ -27,6 +29,12 @@ public class Usuario {
 	private String direccion;
 	private String correo;
 	private int	tipoUsuario;
+	private Reserva[] listaReservas;
+	//Hay 4 tipos, Free, Básica, Trabajador y Premium
+	private String membresia;
+	private Date inicioMembresia;
+	private Date finMembresia;
+	private boolean isMembresiaActiva;
 	private Vehiculo[] listaVehiculos;
 
 }
