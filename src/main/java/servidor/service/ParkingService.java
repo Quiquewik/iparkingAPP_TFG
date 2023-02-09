@@ -41,18 +41,18 @@ public class ParkingService {
     public Parking updateParking(Parking parking) {
         Parking parkingOut = new Parking();
 
-        parkingOut.setNombreParking(parking.getNombreParking());
+        parkingOut.setNombre(parking.getNombre());
         parkingOut.setProvincia(parking.getProvincia());
         parkingOut.setPlazas(parking.getPlazas());
 
         return repository.save(parkingOut);
     }
 
-    public Parking updatePlazasFromParking(Parking parking) {
+    public Parking updatePlazasParking(Parking parking) {
 
         Parking parkingOut = new Parking();
 
-        parkingOut.setPlazas(parkingOut.getPlazas());
+        parkingOut.setPlazas(parking.getPlazas());
 
         return repository.save(parkingOut);
     }
@@ -62,7 +62,7 @@ public class ParkingService {
         return "Parking eliminado";
     }
 
-    public Parking getParkingByNombreParking(String nombre) {
-        return repository.getParkingByNombreParking(nombre);
+    public Parking getParkingByNombre(String nombre) {
+        return repository.findParkingByNombre(nombre);
     }
 }

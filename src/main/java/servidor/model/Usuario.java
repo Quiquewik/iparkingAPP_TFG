@@ -29,8 +29,7 @@ public class Usuario {
 	private String direccion;
 	private String correo;
 	private int	tipoUsuario;
-	private Reserva[] listaReservas;
-	//Hay 4 tipos, Free, Básica, Trabajador y Premium
+	//Hay 3 tipos Básica, Trabajador y Premium
 	private String membresia;
 	private Date inicioMembresia;
 	private Date finMembresia;

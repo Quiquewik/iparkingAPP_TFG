@@ -25,15 +25,19 @@ public class ParkingController {
 
     @GetMapping("/getById/{id}")
     @ResponseBody
-    public Parking getParkingById(String id){return service.getParkingById(id);}
+    public Parking getParkingById(@PathVariable String id){return service.getParkingById(id);}
 
     @GetMapping("/getByNombreParking/{nombre}")
     @ResponseBody
-    public Parking getParkingByNombreParking(String nombre){return service.getParkingByNombreParking(nombre);}
+    public Parking getParkingByNombre(@PathVariable String nombre){return service.getParkingByNombre(nombre);}
 
 
     @PutMapping
     public Parking updateParking(@PathVariable Parking parking){return service.updateParking(parking);}
+
+    @PutMapping("/updatePlazas/")
+    public Parking updatePlazasParking(@PathVariable Parking parking){return service.updatePlazasParking(parking);}
+
 
     @DeleteMapping("/deleteById/{id}")
     public String deleteParking(@PathVariable String id){return service.deleteParking(id);}
