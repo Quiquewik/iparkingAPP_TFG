@@ -7,6 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 import servidor.view.FrmStart;
 
+import java.io.IOException;
+
 @SpringBootApplication
 @AutoConfiguration
 public class IparkingApplication {
@@ -15,7 +17,7 @@ public class IparkingApplication {
 		SpringApplication.run(IparkingApplication.class, args);
 	}
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		new FrmStart(args);
 	}
 }
